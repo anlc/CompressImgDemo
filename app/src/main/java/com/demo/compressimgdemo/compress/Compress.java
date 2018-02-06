@@ -139,6 +139,10 @@ public class Compress {
             }
             new Compress(this, callBack).compress();
         }
+
+        public Bitmap syncCompress() {
+            return new Compress(this, null).syncCompress();
+        }
     }
 
     private void compress() {
@@ -152,6 +156,10 @@ public class Compress {
         } catch (Exception e) {
             localCallBack.onError();
         }
+    }
+
+    private Bitmap syncCompress() {
+        return CompressUtil.compress(build.imgList.get(0), build.file);
     }
 
     class Run implements Runnable {

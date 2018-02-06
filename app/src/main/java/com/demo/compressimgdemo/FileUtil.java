@@ -14,6 +14,10 @@ import java.text.DecimalFormat;
 
 public class FileUtil {
 
+    public static String formatFileSize(File file) {
+        return formatFileSize(getFileSize(file));
+    }
+
     public static long getFileSize(File file) {
         long size = 0;
 
